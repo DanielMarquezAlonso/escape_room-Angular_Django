@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="juego">
+        
+    <div class="mensaje">
+      <p id="texto"><b>{{ currentComentario }}</b></p>
+    </div>
+    <div class="zoomIn">
+      <div *ngIf="botonZoom == true">
+        <button id="botonZoom" (click)="hacerZoom()" > <i class="fa-solid fa-angle-up"></i> </button>
+      </div>
+    </div>
+    <div class="izquierda">
+      <div *ngIf="botonLados == true">
+        <button id="lados" (click)="previousImage()"> <i class="fa-solid fa-angle-left"> </i> </button>
+      </div>
+    </div>
+    <div class="pantalla">
+      <img id="fondoActual" [src]="currentImage">
+      <img *ngIf="this.mostrarLlave == true" (click)="recogerLlave()" class="llave" src="assets/objetos/llave.png">
+      <img *ngIf="this.mostrarGoya == true" (click)="recogerGoya()" class="goya" src="assets/objetos/goya.png">
+      <img *ngIf="this.mostrarRollo == true" (click)="recogerRollo()" class="rollo" src="assets/objetos/rollo.png">
+      <img *ngIf="this.mostrarCartel == true" (click)="recogerCartel()" class="cartel" src="assets/objetos/cartel.png">
+      <img *ngIf="this.mostrarPomo == true" (click)="Escapar()" class="pomo" src="assets/objetos/vacio.png">
+    </div>
+    <div class="derecha">
+      <div *ngIf="botonLados == true">
+        <button id="lados"(click)="nextImage()"> <i class="fa-solid fa-angle-right"> </i> </button>
+      </div>
+    </div>
+    <div class="zoomOut">
+      <div *ngIf="botonVolver == true">
+        <button id="botonVolver" (click)="volverzoom()" > <i class="fa-solid fa-angle-down"></i> </button>
+      </div>
+    </div>
+    <div *ngIf="this.salirPuerta == false" class="inventario">
+        <div class="celdas">
+            <div class="celda1">
+              <img *ngIf="this.cogerRollo == true" class="obtenido" src="assets/objetos/rollo.png">
+            </div>
+            <div class="celda2">
+              <img *ngIf="this.cogerGoya == true" class="obtenido" src="assets/objetos/goya.png">
+            </div>
+            <div class="celda3">
+              <img *ngIf="this.cogerLlave == true" class="obtenido" src="assets/objetos/llave.png">
+            </div>
+            <div class="celda4">
+                <img *ngIf="this.cogerCartel == true" class="obtenido" src="assets/objetos/cartel.png">
+              </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+  <!-- <p>nivel1 works!</p>
+  <div>
+    <p id="texto">{{ currentComentario }}</p>
+  </div>
+  <div class="juego">
+    <div *ngIf="botonZoom == true">
+      <button id="botonZoom" (click)="hacerZoom()" > Zoom In </button>
+    </div>
+    <div *ngIf="botonVolver == true">
+      <button id="botonVolver" (click)="volverzoom()" > Zoom Out </button>
+    </div>
+    <div *ngIf="botonLados == true">
+      <button id="lados" (click)="previousImage()"> < </button>
+    </div>
+    <div *ngIf="botonLados == true">
+      <button id="lados"(click)="nextImage()"> > </button>
+    </div>
+    <img id="fondoActual" [src]="currentImage" style="width: 70%;">
+    <img *ngIf="this.mostrarLlave == true" (click)="recogerLlave()" class="llave" src="assets/objetos/llave.png">
+    <img *ngIf="this.mostrarGoya == true" (click)="recogerGoya()" class="llave" src="assets/objetos/goya.png">
+    <img *ngIf="this.mostrarRollo == true" (click)="recogerRollo()" class="llave" src="assets/objetos/rollo.png">
+     <img *ngIf="this.mostrarPalanca == true" (click)="recogerPalanca()" class="llave" src="assets/objetos/palanca.png">
+    <img *ngIf="this.mostrarPomo == true" (click)="Escapar()" class="llave" src="assets/objetos/vacio.png">
+    
+  </div> -->
+
+</body>
+</html>

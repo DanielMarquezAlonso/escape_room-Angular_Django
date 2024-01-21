@@ -1,0 +1,26 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+# https://hub.docker.com/_/postgres
+# https://github.com/cookiecutter/cookiecutter-django
+# https://cookiecutter-django.readthedocs.io/en/latest/developing-locally-docker.html
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: django-base-pro_production_postgres
+    container_name: djangular
+    env_file:
+      - ./.envs/.local/.postgres
+    volumes:
+      - djangobasepro_postgres_data:/var/lib/postgresql/data
+      - djangobasepro_data_backups:/backups
+    ports:
+      - 5432:5432
+
+volumes:
+  djangobasepro_postgres_data:
+  djangobasepro_data_backups:
+
+

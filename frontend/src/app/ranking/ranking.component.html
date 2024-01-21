@@ -1,0 +1,14 @@
+<div id="fondo_menu">
+    <h1>Top maravillo</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <span class="col-2 fw-bold fs-4">Jugador</span>
+            <span class="col-2 fw-bold fs-4">Tiempo</span>
+        </div>
+        <div *ngFor="let dato of datos" class="fs-5 row justify-content-center">
+            <span class="col-2">{{dato.usuario}}</span>
+            <span class="col-2">{{dato.tiempo}}</span>
+        </div>
+    </div>
+    <button class="col-1 btn btn-danger btn-lg" [routerLink]="['/']">Menú</button>
+</div>

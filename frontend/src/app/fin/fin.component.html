@@ -1,0 +1,25 @@
+<div id="fondo_menu">
+    <div class="container">
+        <div>
+            <h2 id="titulo"><strong>¡ESCAPASTE!</strong></h2>
+        </div>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="container">
+            <div class="row justify-content-center">
+                <h3 class="col-3">Tiempo:</h3>
+            </div>
+            <div class="row justify-content-center">
+                <input class="col-3" formControlName="tiempo" value="{{timeFin}}" type="text" readonly>
+            </div>
+            <div class="row justify-content-center">
+                <h3 class="col-3">Introduce tu nombre:</h3>
+            </div>
+            <div class="row justify-content-center" id="cuadro">
+                <input class="col-3" formControlName="usuario" type="text" required>
+            </div>
+            <div class="row justify-content-center" id="cuadro">
+                <input type="submit" value="¡Registrar!" class="btn btn-primary col-3" id="btn">
+            </div>
+        </form> 
+    </div>
+</div>
+
